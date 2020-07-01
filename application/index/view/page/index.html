@@ -1,0 +1,13 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+
+{/block}
+
+<!--内容-->
+{block name="main"}
+<div>
+    {$data['text']|raw}
+</div>
+{/block}

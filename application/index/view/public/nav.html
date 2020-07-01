@@ -1,0 +1,21 @@
+<!--导航栏-->
+<div class="HomeNavigation">
+    <div class="HomeNavigation_logo">
+        <a href="/">
+            <img src="{$configuration['logo']|get_file_path}" alt="">
+        </a>
+    </div>
+    <div class="HomeNavigation_nav">
+        <ul>
+            {notempty name="nav"}
+            {volist name="nav" id="val"}
+            <li>
+                <a href="{:url($val['url_value'])}{neq name='val.params' value=''}?{$val.params}{/neq}">
+                    {$val['title']}
+                </a>
+            </li>
+            {/volist}
+            {/notempty}
+        </ul>
+    </div>
+</div>

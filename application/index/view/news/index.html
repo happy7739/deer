@@ -1,0 +1,81 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+<style type="text/css">
+    .case_page{width: 750px!important;}
+    .case_page ul li{font-size: 20px!important;}
+    .case_page ul li:first-child{width: 65px!important;}
+    .case_page ul li:last-child{width: 65px!important;}
+    .case_page{
+        width: 1200px;
+        height: 25px;
+        margin:30px auto;
+    }
+    .case_page ul{
+        display:table;
+        text-align:center;
+        margin:0 auto;
+    }
+    .case_page ul li{
+        width: 23px;
+        height: 23px;
+        float: left;
+        margin-left: 14px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .case_page ul li a{color: #999999;}
+    .case_page ul li:first-child{
+        width: 45px;
+        height: 25px;
+    }
+    .case_page ul li:last-child{
+        width: 45px;
+        height: 25px;
+    }
+</style>
+{/block}
+
+<!--内容-->
+{block name="main"}
+
+<!--分页数据-->
+{notempty name="data"}
+<div class="newslist" style="margin-bottom: 20px;">
+    <ul class="clearfix" id="pageContent">
+        {volist name="data" id="val"}
+        <li>
+            <div class="clearfixli_left">
+                <img src="{$val.img|get_file_path}" alt="">
+            </div>
+            <div class="clearfixli_right">
+                <h4>
+                    <a href="{:url('index/news/index')}?id={$val.id}">
+                        {$val.title}
+                    </a>
+                </h4>
+                <h5>{$val.time}</h5>
+                <div class=newslist_right_con>{$val.desc}</div>
+            </div>
+        </li>
+        {/volist}
+    </ul>
+    <!-- 分页 -->
+    <div class="case_page">
+        {$render|raw}
+    </div>
+</div>
+{/notempty}
+
+<!--渲染详情-->
+{notempty name="details"}
+<div class="about_con">
+    <p style="text-align: center">{$details.title}</p>
+    <p style="text-align: center">发布日期：{$details.time}</p>
+    {$details['text']|raw}
+    <p><a href="{:url('index/page/index')}?cat=4">相关资讯</a></p>
+</div>
+{/notempty}
+
+{/block}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$title}</title>
+    <!-- 公共样式和JS -->
+    <link rel="stylesheet" href="/static/index/css/index.css">
+    <link rel="stylesheet" href="/static/index/css/public.css">
+    <!-- 当前页面的样式及JS -->
+    {block name="custom"}{/block}
+</head>
+<body>
+{block name="nav"}{include file="public/nav" /}{/block}
+{block name="main"}{/block}
+{block name="model"}{/block}
+</body>
+</html>

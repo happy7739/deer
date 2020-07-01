@@ -1,0 +1,239 @@
+<?php /*a:4:{s:55:"F:\Project\deer\application\index\view\index\index.html";i:1590567397;s:56:"F:\Project\deer\application\index\view\public\index.html";i:1590387119;s:54:"F:\Project\deer\application\index\view\public\nav.html";i:1590567715;s:57:"F:\Project\deer\application\index\view\public\footer.html";i:1590568555;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?php echo htmlentities($title); ?></title>
+    <!-- 公共样式和JS -->
+    <link rel="stylesheet" href="/static/index/css/index.css">
+    <link rel="stylesheet" href="/static/index/css/public.css">
+    <!-- 当前页面的样式及JS -->
+    
+
+</head>
+<body>
+<!--导航栏-->
+<div class="HomeNavigation">
+    <div class="HomeNavigation_logo">
+        <a href="/">
+            <img src="<?php echo htmlentities(get_file_path($configuration['logo'])); ?>" alt="">
+        </a>
+    </div>
+    <div class="HomeNavigation_nav">
+        <ul>
+            <?php if(!(empty($nav) || (($nav instanceof \think\Collection || $nav instanceof \think\Paginator ) && $nav->isEmpty()))): if(is_array($nav) || $nav instanceof \think\Collection || $nav instanceof \think\Paginator): $i = 0; $__LIST__ = $nav;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+            <li>
+                <a href="<?php echo url($val['url_value']); if($val['params'] != ''): ?>?<?php echo htmlentities($val['params']); ?><?php endif; ?>">
+                    <?php echo htmlentities($val['title']); ?>
+                </a>
+            </li>
+            <?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php endif; ?>
+        </ul>
+    </div>
+</div>
+
+
+<div class="ContentRight">
+    <div class="ContentRight_banner">
+        <img src="/static/index/image/index/banner.jpg" alt="">
+    </div>
+    <div class="ContentRight_main">
+        <!--关于-->
+        <div class="Main_about">
+            <div class="Main-about_title">关于我们 / About US</div>
+            <div class="Main-about_guanyu">
+                <div class="linkBot">
+                    <div class="linkPic"></div>
+                    <div class="linkB_con">
+                        <h2>这个茶，叫"The Alley鹿角巷"</h2>
+                        <p>鹿角巷奶茶加盟连锁是台湾黑糖奶茶首创者，将正宗台式的黑糖珍珠鲜奶推向全世界，经过这几年发展，门店数量遍布世界各地。初次登陆内地以来，以其高颜质的饮品外型与绝对五颗星好评的口味，迅速成为时尚潮流年轻男女的拔草新据点</p>
+                        <p>The Alley鹿角巷将新茶饮中的“茶”替换掉，用繁复工法熬成的温热正宗台湾黑糖珍珠加上香浓冰凉的纯鲜奶，上冷下热在口中交融成绝妙的口感，这是化繁为简的极致，无论时间、温度、重量、比例，绝不能多任何一克重或少任何一秒钟，近乎強迫症的坚持，这就是我们特有的坚持。</p>
+                        <p>鹿角巷还鱼各大品牌商合作，电影、书店、明星等都曾合作过，让消费者不只是味觉享受，也让你时尚品味展露无疑。2018年的鹿角巷努力在各方面有所突破，旗下加盟门店也在大陆不断扩充，期待您的加入...</p>
+                        <p class="threeBot2">
+                                <span>
+                                    <a href="<?php echo url('index/page/index'); ?>?cat=1">
+                                        <img src="/static/index/image/index/play2.jpg" alt="">
+                                    </a>
+                                </span>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--关于 end-->
+
+        <!--产品展示-->
+        <div class="Main_show">
+            <div class="Main-about_title">鹿角巷奶茶产品 / Product Center</div>
+            <div class="productShow">
+                <div class="productShow_col">
+                    <div class="project-item">
+                        <img src="/static/index/image/index/da1.jpg" alt="">
+                        <div class="project-hover">
+                            <div class="inside">
+                                <h5>
+                                    阿萨姆拿铁
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productShow_col">
+                    <div class="project-item">
+                        <img src="/static/index/image/index/da2.jpg" alt="">
+                        <div class="project-hover">
+                            <div class="inside">
+                                <h5>
+                                    黑糖鹿丸鲜奶
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productShow_col">
+                    <div class="project-item">
+                        <img src="/static/index/image/index/da3.jpg" alt="">
+                        <div class="project-hover">
+                            <div class="inside">
+                                <h5>
+                                    鹿丸可可鲜奶
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productShow_col">
+                    <div class="project-item">
+                        <img src="/static/index/image/index/da4.jpg" alt="">
+                        <div class="project-hover">
+                            <div class="inside">
+                                <h5>
+                                    小鹿出没
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productShow_col">
+                    <div class="project-item">
+                        <img src="/static/index/image/index/da5.jpg" alt="">
+                        <div class="project-hover">
+                            <div class="inside">
+                                <h5>
+                                    小确幸
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productShow_col">
+                    <div class="project-item">
+                        <img src="/static/index/image/index/da6.jpg" alt="">
+                        <div class="project-hover">
+                            <div class="inside">
+                                <h5>
+                                    雪莓鹿鹿
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="<?php echo url('index/product/index'); ?>">
+            <div class="z-btn z-btn12">
+                more
+                <span>更</span>
+                <span>多</span>
+            </div>
+        </a>
+        <!--产品展示 end-->
+
+        <!--优势-->
+        <div class="Main_about">
+            <div class="youshibg">
+                <div class="title2">鹿角巷品牌优势 / Advantage</div>
+                <div class="ys">
+                    <p>
+                        <span class="span">01、品牌</span>
+                        台湾新生代知名连锁品牌【The Alley鹿角巷】，主打生活创意与时尚美学，无论是店内装潢、杯身设计还是品牌风格都相当有范儿，短短四年迅速发展至日本、加拿大、香港、马来西亚、上海、澳门等地，甚至开在像东京表参道、新宿、涩谷，台北东区、香港尖沙咀弥敦道等时尚重镇，成为潮流时尚男女必去的饮品店之一。
+                    </p>
+                </div>
+                <div class="ys">
+                    <p>
+                        <span class="span">02、产品</span>
+                        真正好的「黑糖珍珠」，直径必须在0.8~1公分左右，熬煮时不加任何一滴现成人工糖浆或是其他廉價的糖來混和，靠的是大量「纯度极高的纯正黑糖」，透过长时间的煮、拌、滚、焖等多道工序，熬煮而成的完美黑糖鹿丸，口感上還要分三种层次，才算及格。
+                    </p>
+                </div>
+                <div class="ys">
+                    <p>
+                        <span class="span">03、更多属性</span>
+                        高颜质的饮品外型与绝对五颗星好评的口味，迅速成为时尚潮流年轻男女的拔草新据点，以茶饮消费与情感表达实现跨界IP营销，供年轻人追逐的人格化IP，让鹿角巷奶茶品牌的选择成本更低、变现速度更快，流量来得更多。
+                    </p>
+                </div>
+                <div class="ys">
+                    <p>
+                        <span class="span">04、无“茶”爆品</span>
+                        黑糖鹿丸鲜奶是热销的招牌饮品，不是奶茶，纯粹是黑糖珍珠加鲜奶这么简单，就是因为简单到如此纯粹，所以好喝，所以迷人。看似越简单的背后，从来都不简单，没有茶叶、人工香料，糖浆以及任何可以蒙蔽味蕾的干扰，必须在仅有的两个元素上做到完美。
+                    </p>
+                </div>
+            </div>
+
+            <a href="<?php echo url('index/page/index'); ?>?cat=3"><div class="z-btn z-btn12">
+                more
+                <span>更</span>
+                <span>多</span>
+            </div></a>
+        </div>
+        <!--优势 end-->
+
+        <!--加盟-->
+        <div class="Main_Join">
+            <div class="Main-about_title">鹿角巷加盟 / Join Us</div>
+            <div class="guanyu">
+                <div class="linkBot">
+                    <div class="linkPic2"></div>
+                    <div class="linkB_con">
+                        <h2>The Alley鹿角巷奶茶加盟</h2>
+                        <p>» 鹿角巷奶茶门店选址标准：</p>
+                        <p>商业综合体、写字楼大厅、学校门口、大型社区、人流集中路段等。</p>
+                        <p>» 面积要求：</p>
+                        <p>1.商业综合体、步行街、写字楼大厅，门店面积不低于30平方米；</p>
+                        <p>2.学校门口、大型社区、人流集中路段，店面面积15-40平方米；</p>
+                        <p>3.店面敞口5米-6米为宜，不少于3.5米。</p>
+                        <p>» 鹿角巷店面形象：</p>
+                        <p>1.严格统一店面形象，按照公司店面标准化设计规范进行装修</p>
+                        <p>2.店员统一着装，服务按照公司规范标准实行</p>
+                        <p>3.店内设施按照公司标准配置</p>
+                        <p>» The Alley鹿角巷奶茶加盟店要求：</p>
+                        <p>1.有强烈的加盟意愿，理解并遵守公司选址开店装修基本要求；</p>
+                        <p>2.接受鹿角巷奶茶加盟连锁管理要求，服从公司指导和管理；</p>
+                        <p>3.有足够的自有资金，满足加盟条件。</p>
+                        <p class="threeBot2">
+                            <span><a href="<?php echo url('index/page/index'); ?>?cat=4"><img src="/static/index/image/index/play2.jpg" alt=""></a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--加盟 end-->
+
+        <!--footer-->
+        <!--底部-->
+<div class="footer">
+    成都餐协餐饮管理有限公司@版权所有信息  总部地址：<?php echo htmlentities($configuration['address']); ?>
+    <a href="http://www.beian.miit.gov.cn/">蜀ICP备12020698号-13</a>
+</div>
+        <!--footer end-->
+    </div>
+</div>
+
+
+
+</body>
+</html>

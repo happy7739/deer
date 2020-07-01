@@ -1,0 +1,128 @@
+{extend name="public/base" /}
+
+<!-- 当前页面的样式及JS -->
+{block name="custom"}
+<style type="text/css">
+    li{ list-style-type:none; color:#333333; line-height:30px;}
+    .showPic{
+        margin: 30px 0;
+        display: block;
+    }
+    .showPic1 ul li{
+        float: left;
+        width: 32.4%;
+        margin-right: 3px;
+        margin-left: 6px;
+        margin-bottom: 12px;
+    }
+    .showPic1 ul li img{
+        width: 100%;
+    }
+    .showPic1 ul li span{
+        display: block;
+        color: #333;
+        text-align: center;
+        background: #f1f1f1;
+        padding: 10px 0;
+    }
+    #pageContent li{
+        float: left;
+        width: 32.4%;
+        margin-left: 6px;
+        margin-right: 3px;
+        margin-bottom: 12px;
+        text-align:left;
+    }
+    #pageContent li img{
+        width: 100%;
+    }
+    #pageContent li span{
+        display: block;
+        color: #333333;
+        text-align: center;
+        background: #f1f1f1;
+        padding: 10px 0;
+    }
+    .case_page{width: 750px!important;}
+    .case_page ul li{font-size: 20px!important;}
+    .case_page ul li:first-child{width: 65px!important;}
+    .case_page ul li:last-child{width: 65px!important;}
+    .case_page{
+        width: 1200px;
+        height: 25px;
+        margin:30px auto;
+    }
+    .case_page ul{
+        display:table;
+        text-align:center;
+        margin:0 auto;
+    }
+    .case_page ul li{
+        width: 23px;
+        height: 23px;
+        float: left;
+        margin-left: 14px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .case_page ul li a{color: #999999;}
+    .case_page ul li:first-child{
+        width: 45px;
+        height: 25px;
+    }
+    .case_page ul li:last-child{
+        width: 45px;
+        height: 25px;
+    }
+</style>
+{/block}
+
+<!--内容-->
+{block name="main"}
+
+<div class="showPic">
+    <ul id="pageContent">
+        {notempty name="data"}
+        {volist name="data" id="val"}
+        <li>
+            <img src="{$val['img']|get_file_path}" alt="{$val['alt']}">
+            <span>{$val['title']}</span>
+        </li>
+        {/volist}
+        {/notempty}
+    </ul>
+    <style type="text/css">
+        <!--
+        #pages{
+            color:#666;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #pages span{
+            border:1px solid #ddd;
+            line-height:1.2;
+            margin:0 3px;
+            padding:10px 14px;
+            color:#ccc;
+        }
+        #pages span a{
+            text-decoration:none;
+            color:#333333;
+        }
+        #pages span:hover{
+
+        }
+        #pages strong{
+            color:#FF0000;
+            padding:0 3px;
+            font-weight:bold
+        }
+        -->
+    </style>
+    <!-- 分页 -->
+    <div class="case_page">
+        {$render|raw}
+    </div>
+</div>
+
+{/block}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$now_nav['title']}</title>
+    <!-- 公共样式和JS -->
+    <link rel="stylesheet" href="/static/index/css/other.css">
+    <link rel="stylesheet" href="/static/index/css/public.css">
+    <!-- 当前页面的样式及JS -->
+    {block name="custom"}{/block}
+</head>
+<body>
+{block name="nav"}{include file="public/nav" /}{/block}
+
+<div class="show_right">
+    <div class="banner_n">
+        <div class="head_img">
+            <img src="/static/index/image/Other/banner_n.png" alt="">
+            <span>{$now_nav['title']}</span>
+        </div>
+        <div class="main">
+            <div class="locat">
+                当前位置：<a href="{:url('index/index/index')}">鹿角巷官网</a> >
+                <a href="{:url($now_nav['url_value'])}{neq name='now_nav.params' value=''}?{$now_nav.params}{/neq}">{$now_nav['title']}</a>
+                {notempty name="details"} > 详细 {/notempty}
+            </div>
+            {block name="main"}{/block}
+        </div>
+    </div>
+    {include file="public:footer" /}
+</div>
+
+{block name="model"}{/block}
+</body>
+</html>
